@@ -1,0 +1,11 @@
+kind: Service      # Create new service
+apiVersion: v1     
+metadata:
+  name: spring-music-service # Name of the service
+spec:
+  selector:
+    app: frontend    # Run on any pod(s) with label - app: myapp
+  ports:    # Map incoming port to target port
+    - port: 80
+      targetPort: 8080
+  type: LoadBalancer
