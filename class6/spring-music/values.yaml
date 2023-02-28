@@ -1,0 +1,20 @@
+databaseProd:
+  dbname: "db_mysql"
+  dbtable: "music"
+
+databaseTest:
+  dbname: "db_mysql-test"
+  dbtable: "music"
+
+pods:
+  image: "yanivomc/spring-music"
+
+food:
+  drink: "beer"
+  eat: "Peanut Butter and Jelly sandwich"
+
+    #database:
+    #dbname: "db_mysql"
+    #dbtable: "music"
+    #image: "yanivomc/spring-music"
+    #tag: "latest"

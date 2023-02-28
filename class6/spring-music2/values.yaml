@@ -1,0 +1,7 @@
+service:
+  type: LoadBalancer
+deployment:
+  replicaNum: 1
+container:
+  name: spring-music
+  image: yanivomc/spring-music:latest
