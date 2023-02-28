@@ -8,6 +8,6 @@ spec:
   type: {{ .Values.service.type }} #from values
   ports:
   - name: http
-  protocol: TCP
-  port: 80
-  targetPort: 8080
+    protocol: TCP
+    port: 80
+    targetPort: 8080

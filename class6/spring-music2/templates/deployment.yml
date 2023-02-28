@@ -12,8 +12,8 @@ spec:
       labels:
         app: music
     spec:
-    containers:
-    - name: {{ .Values.container.name }} #from values
-    image: {{ .Values.container.image }} #from values
-    ports:
-    - containerPort: 8080
+      containers:
+      - name: {{ .Values.container.name }} #from values
+        image: {{ .Values.container.image }} #from values
+        ports:
+        - containerPort: 8080
