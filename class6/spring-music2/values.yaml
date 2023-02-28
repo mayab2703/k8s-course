@@ -5,3 +5,5 @@ deployment:
 container:
   name: spring-music
   image: yanivomc/spring-music:latest
+ingress:
+  enabled: true
