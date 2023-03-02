@@ -1,0 +1,15 @@
+Thank you for installing {{ .Chart.Name }}.
+
+Your release is named {{ .Release.Name }}.
+
+To learn more about the release, try:
+
+  $ helm status {{ .Release.Name }}
+  $ helm get all {{ .Release.Name }}
+
+To get your ingress URL run the next command:
+$ kubectl get ingress
+(You might need to wait a few seconds) 
+ 
+To get your secret Password run the command:
+$ kubectl get secret random-pass -o jsonpath='{.data.random-password}' 

@@ -1,0 +1,11 @@
+service:
+  type: ClusterIP
+deployment:
+  replicaNum: 3
+container:
+  name: spring-music
+  image: yanivomc/spring-music
+  tag: latest
+ingress:
+  enabled: true
+sleepyTime: 3

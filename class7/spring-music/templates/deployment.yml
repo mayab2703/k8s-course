@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "{{ .Release.Name }}-{{ .Chart.Name }}-{{ .Chart.Version }}"
+spec:
+  selector:
+    matchLabels:
+      app: music
+      {{- include "spring.labels" . | nindent 6 }}
+  replicas: {{ .Values.deployment.replicaNum }} #from values
+  template:
+    metadata:
+      labels:
+        app: music
+        {{- include "spring.labels" . | nindent 8 }}
+    spec:
+      containers:
+      - name: {{ .Values.container.name }} #from values
+        image: {{ .Values.container.image }}:{{ .Values.container.tag }} #from values
+        ports:
+        - containerPort: 8080
