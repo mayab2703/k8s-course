@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-with-pvc
+spec:
+  selector:
+    matchLabels:
+      app: music
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: music
+    spec:
+      containers:
+      - name: spring-music
+        image: yanivomc/spring-music:latest
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - mountPath: /var/app
+          name: spring-music-volume
+      volumes:
+      - name: spring-music-volume
+        persistentVolumeClaim:
+          claimName: jb-claim
+

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: music-pod
+  labels:
+    app: spring-music
+spec:
+  containers:
+    - name: music
+      image: yanivomc/spring-music:latest
+      ports:
+      - containerPort: 8080
